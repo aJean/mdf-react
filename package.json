@@ -1,0 +1,46 @@
+{
+  "name": "@mdfjs/react",
+  "version": "0.1.8",
+  "description": "separate plugins-react from mdfjs",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "repository": "https://github.com/aJean/mdf-js.git",
+  "author": "qy",
+  "license": "MIT",
+  "scripts": {
+    "build": "father-build",
+    "pub": "yarn publish"
+  },
+  "dependencies": {
+    "@babel/core": "7.12.3",
+    "@babel/plugin-proposal-class-properties": "7.12.1",
+    "@babel/plugin-proposal-decorators": "7.12.12",
+    "@babel/plugin-transform-runtime": "7.12.10",
+    "@babel/preset-env": "7.12.11",
+    "@babel/preset-react": "7.12.10",
+    "@babel/preset-typescript": "7.12.7",
+    "@babel/runtime": "7.12.5",
+    "@mdfjs/types": "^0.1.8",
+    "@mdfjs/utils": "^0.1.8",
+    "babel-loader": "8.2.2",
+    "dva": "2.6.0-beta.20",
+    "dva-immer": "0.5.2",
+    "dva-loading": "3.0.22",
+    "history": "4.10.1",
+    "lodash": "4.17.20",
+    "react-router": "5.2.0",
+    "react-router-dom": "5.2.0",
+    "redux-persist": "6.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/lodash": "4.14.165",
+    "@types/react-router-dom": "5.1.6",
+    "father-build": "1.19.1"
+  }
+}
