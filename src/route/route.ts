@@ -1,8 +1,7 @@
 import { join, resolve as resolvePath } from 'path';
 import DynamicRoute from './getRoutes';
 import { IApi } from '@mdfjs/types';
-import { prettierFormat, chalkPrints } from '@mdfjs/utils';
-import { genRoutesPath } from '../utils';
+import { prettierFormat, chalkPrints, genRoutesPath } from '@mdfjs/utils';
 
 /**
  * @file 路由约束插件

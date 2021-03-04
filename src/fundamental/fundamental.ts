@@ -1,8 +1,7 @@
 import { IApi } from '@mdfjs/types';
-import { chalkPrints } from '@mdfjs/utils';
+import { chalkPrints, genModelsPath } from '@mdfjs/utils';
 import { resolve as resolvePath } from 'path';
 import injectModels from './inject';
-import { genModelsPath } from '../utils';
 
 /**
  * @file 集成业务框架 - fundamental

@@ -1,8 +1,7 @@
 import { IApi } from '@mdfjs/types';
 import { join, dirname, resolve as resolvePath } from 'path';
-import { prettierFormat, chalkPrints } from '@mdfjs/utils';
+import { prettierFormat, chalkPrints, genModelsPath } from '@mdfjs/utils';
 import injectModels from './inject';
-import { genModelsPath } from '../utils';
 
 /**
  * @file 集成业务框架 - dva

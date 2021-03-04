@@ -1,4 +1,4 @@
-import { IApi, IJoi } from '@mdfjs/types';
+import { IApi } from '@mdfjs/types';
 import chain from './compiler/chain';
 
 /**
