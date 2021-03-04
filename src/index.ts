@@ -6,38 +6,19 @@ import chain from './compiler/chain';
  */
 
 export default function (api: IApi) {
-  // 设置 default 无效，因为是在 service 实例化之前读取
-  api.describe({
-    key: 'framework',
-
-    config: {
-      schema(joi: IJoi) {
-        return joi
-          .object({
-            type: joi.string().allow('dva', 'fundamental'),
-            root: joi.string(),
-            persist: joi.boolean(),
-          })
-          .required();
-      },
-
-      default: { type: 'dva', persist: false },
-    },
-  });
-
   api.changeUserConfig((config: any) => {
     config.appEntry = `${api.cwd}/.tmp/mdf.tsx`;
     return config;
   });
 
-  const { framework } = api.getConfig();
+  const { project } = api.getConfig();
   const presets = [
     require.resolve('./route/route'),
     require.resolve('./history/history'),
     require.resolve('./mdf/mdf'),
   ];
 
-  switch (framework.type) {
+  switch (project.framework) {
     case 'dva':
       presets.push(require.resolve('./dva/dva'));
       break;

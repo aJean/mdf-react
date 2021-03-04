@@ -1,14 +1,20 @@
-import { IApi } from '@mdfjs/types';
-import { watch } from '@mdfjs/utils';
-
 /**
- * @file 考虑到 path 会因为不同类型的项目而变化
+ * @file utils
  */
 
-export function genRootPath(api: any) {
-  const { framework } = api.getConfig();
 
-  return framework.root || 'src';
+/**
+ * 工程模块需要自己适配路径规范
+ */
+export function genRootPath(api: any) {
+  const { project } = api.getConfig();
+
+  switch (project.type) {
+    case 'hybrid':
+      return 'src/client';
+    default:
+      return 'src';
+  }
 }
 
 export function genRoutesPath(api: any) {

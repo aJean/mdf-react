@@ -1,6 +1,9 @@
 /**
- * @file 考虑到 path 会因为不同类型的项目而变化
+ * @file utils
  */
-export declare function genRootPath(api: any): any;
+/**
+ * 工程模块需要自己适配路径规范
+ */
+export declare function genRootPath(api: any): "src/client" | "src";
 export declare function genRoutesPath(api: any): string;
 export declare function genModelsPath(api: any): string;

@@ -14,11 +14,11 @@ function importsfy(sourceList: string[]) {
 export default function(api: IApi) {
   api.onCodeGenerate(function() {
     const { Mustache, PluginType, paths } = api;
+    const { project } = api.getConfig();
     const tpl = api.getFile(join(__dirname, 'mdf.tpl'));
-    const { framework } = api.getConfig();
 
     const content = Mustache.render(tpl, {
-      useDva: framework.type === 'dva',
+      useDva: project.framework === 'dva',
 
       importsPolyfill: importsfy(
         api.invokePlugin({

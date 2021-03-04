@@ -9,7 +9,7 @@ import { checkModel } from '../fundamental/parse';
 
 export default function (api: IApi, dvaPath: string, modelsPath: string) {
   const { paths, Mustache } = api;
-  const { isDev, framework } = api.getConfig();
+  const { isDev, project } = api.getConfig();
   const matches = globFind(`${modelsPath}/*.{ts,js,tsx,jsx}`);
   const models = matches
     .map((file: string) => {
@@ -55,7 +55,7 @@ export default function (api: IApi, dvaPath: string, modelsPath: string) {
   const content = Mustache.render(tpl, {
     RegisterModels,
     dvaPath,
-    persistPath: framework.persist && dirname(require.resolve('redux-persist')),
+    persistPath: project.persist && dirname(require.resolve('redux-persist')),
     dvaLoadingPath: require.resolve('dva-loading/dist/index.js'),
     dvaImmerPath: require.resolve('dva-immer/dist/index.js'),
   });
