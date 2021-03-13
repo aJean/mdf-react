@@ -1246,14 +1246,14 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@mdfjs/core@^0.1.9":
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/@mdfjs/core/-/core-0.1.9.tgz#3207488698206775424e2be68db0f9926fb929fb"
-  integrity sha512-chgCTb0vkampXlBIdchrToBns/giBMX/KSiO78bTPIQc9RX5pj48YLEU5eYw0RLnuWHO3qV96yT/bySB5MS+Ug==
+"@mdfjs/core@^0.1.11":
+  version "0.1.11"
+  resolved "https://registry.yarnpkg.com/@mdfjs/core/-/core-0.1.11.tgz#5fbd367c7e82858ed9e582e34a234bc5f9afe6ba"
+  integrity sha512-k0PdwSWJNuZRrsbL3MYhPEMdjKotjg7FbfMvRBwbgnHuE5VUqfjRyuGonINOYC/RqXkz+AVhkt7ho/5kmN/8hg==
   dependencies:
-    "@mdfjs/records" "^0.1.9"
-    "@mdfjs/runtime" "^0.1.9"
-    "@mdfjs/utils" "^0.1.9"
+    "@mdfjs/records" "^0.1.11"
+    "@mdfjs/runtime" "^0.1.11"
+    "@mdfjs/utils" "^0.1.11"
     "@types/mkdirp" "1.0.1"
     "@types/mustache" "4.0.1"
     "@types/webpack" "4.41.25"
@@ -1264,36 +1264,36 @@
     reflect-metadata "^0.1.13"
     webpack-chain "6.5.1"
 
-"@mdfjs/records@^0.1.9":
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/@mdfjs/records/-/records-0.1.9.tgz#ef30e975a6d955c8028d99d9def1234188315217"
-  integrity sha512-uu7tbZvncHPawxoshnveZ2qMO5RSR9JmH70jOtHBBPSdxz8GhcQvUCdeBo/Ip5rGUDerOcXJQjrx06Cp4mtl2A==
+"@mdfjs/records@^0.1.11":
+  version "0.1.11"
+  resolved "https://registry.yarnpkg.com/@mdfjs/records/-/records-0.1.11.tgz#3d01db44d1bc68ddfbbf1c9f76bee63dade5e99c"
+  integrity sha512-Bx0RhXXVhEXYUdUZ/JIrCAyj0xWGqIGF6L/dExYJccYiCxpVt38GuMeR9YUR0wXLPEYWF682Q4QKGZl3rgBQ5Q==
 
-"@mdfjs/runtime@^0.1.9":
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/@mdfjs/runtime/-/runtime-0.1.9.tgz#f7038b1e4d7b291935ff5d9abc48062ce5337b62"
-  integrity sha512-YjAxc6xXsp+TJ8qkEGg2lMGHOCHKhhGbpmDl6ohZ1ZCmopAKOfSveev3MFIjR5N/szYv9oh5Xz/5bVpWvcZ1ZQ==
+"@mdfjs/runtime@^0.1.11":
+  version "0.1.11"
+  resolved "https://registry.yarnpkg.com/@mdfjs/runtime/-/runtime-0.1.11.tgz#ac7d3236ae7b7dcc6f9140a0dce2b0623b34cbf5"
+  integrity sha512-Y1v7ZgJDj3jrEj0AfbHrDwcgCvf9iF+7dlRSUaDZoLSAwiS+hVH0/XsTBD/povCgSQvNA3jUlWSCD3BA8IbnnA==
   dependencies:
-    "@mdfjs/records" "^0.1.9"
+    "@mdfjs/records" "^0.1.11"
 
-"@mdfjs/types@^0.1.9":
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/@mdfjs/types/-/types-0.1.9.tgz#5a4d2ac725feb317f6514a5d2fd2e8e243ac8db1"
-  integrity sha512-Tp1qf787heW7g2Qb/b35MldxO381J4n8Te/jXwzTYj+P1N+tP/yeKxVgf1aJNHwpN/J7C5r+K0FqO6oJc7SDKA==
+"@mdfjs/types@^0.1.11":
+  version "0.1.11"
+  resolved "https://registry.yarnpkg.com/@mdfjs/types/-/types-0.1.11.tgz#ad92ef379bb1dbe188d5c9f61dc9aeb113349c57"
+  integrity sha512-/w7Xy7M7UeUoZX5hTLEkRQK7x1vP2zGNaIJU1GGlKr5nfGjMe5z/CYVsaGJ+tVIxKF+qzWgh+3FQbw/sA1lnhA==
   dependencies:
-    "@mdfjs/core" "^0.1.9"
-    "@mdfjs/records" "^0.1.9"
+    "@mdfjs/core" "^0.1.11"
+    "@mdfjs/records" "^0.1.11"
 
-"@mdfjs/utils@^0.1.9":
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/@mdfjs/utils/-/utils-0.1.9.tgz#9afc933b3e19e66a6d3c2fb513ad5e636424f5ad"
-  integrity sha512-7fZUvJsR28XR9WE08oj8dR9R+i/l1zDbLMcezfbGXCs0lbieCdW1rc7Ldzv+oXJc/65WTIT8iH8VEmYYp+enTg==
+"@mdfjs/utils@^0.1.11":
+  version "0.1.11"
+  resolved "https://registry.yarnpkg.com/@mdfjs/utils/-/utils-0.1.11.tgz#c19eb9d336e5e6e57ae38f9e2ee9947f6efe0015"
+  integrity sha512-eHuLRQnQP2MPUGps/DNvRM0RkkYToD0i1+YIMSQQQ2jEv7p6dFUQryqwoJubYFq3MiVxNT4q1+Ie+pVJEdRVgA==
   dependencies:
     "@babel/core" "7.12.3"
     "@babel/preset-env" "7.12.1"
     "@babel/preset-typescript" "7.12.1"
     "@babel/register" "7.12.1"
-    "@mdfjs/records" "^0.1.9"
+    "@mdfjs/records" "^0.1.11"
     babel-plugin-module-resolver "4.0.0"
     chalk "4.1.0"
     chokidar "3.4.3"
@@ -1645,9 +1645,9 @@
   integrity sha512-W+bw9ds02rAQaMvaLYxAbJ6cvguW/iJXNT6lTssS1ps6QdrMKttqEAMEG/b5CR8TZl3/L7/lH0ZV5nNR1LXikA==
 
 "@types/uglify-js@*":
-  version "3.12.0"
-  resolved "https://registry.yarnpkg.com/@types/uglify-js/-/uglify-js-3.12.0.tgz#2bb061c269441620d46b946350c8f16d52ef37c5"
-  integrity sha512-sYAF+CF9XZ5cvEBkI7RtrG9g2GtMBkviTnBxYYyq+8BWvO4QtXfwwR6a2LFwCi4evMKZfpv6U43ViYvv17Wz3Q==
+  version "3.13.0"
+  resolved "https://registry.yarnpkg.com/@types/uglify-js/-/uglify-js-3.13.0.tgz#1cad8df1fb0b143c5aba08de5712ea9d1ff71124"
+  integrity sha512-EGkrJD5Uy+Pg0NUR8uA4bJ5WMfljyad0G+784vLCNUkD+QwOJXUbBYExXfVGf7YtyzdQp3L/XMYcliB987kL5Q==
   dependencies:
     source-map "^0.6.1"
 
