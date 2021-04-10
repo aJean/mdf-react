@@ -40,7 +40,7 @@ const renderClient = plugin.invoke({
 
 {{{ globalCode }}}
 
-plugin.invoke({ key: 'beforeRender', type: PluginType.event, args: [config, history] });
+plugin.invoke({ key: 'beforeRender', type: PluginType.event, args: [config, app] });
 renderClient();
 
 // hot module replacement
