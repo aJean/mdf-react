@@ -1,5 +1,8 @@
 ### mdf-react
-将 mdfjs 里的 plugins-react 迁移到这，以后加的功能多了也要使用 workspace 模式
+为 mdfjs 提供 react 技术栈支持
+
+#### todos
+- 内置 rematch 开发框架
 
 #### 开发流程
 link 模块到项目，同时 pkg 里面也要加入 dependencies，这样 mdfjs 主模块会自动读取
