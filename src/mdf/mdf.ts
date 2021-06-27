@@ -12,7 +12,9 @@ function importsfy(sourceList: string[]) {
 }
 
 export default function(api: IApi) {
-  api.onCodeGenerate(function() {
+  api.onCodeGenerate({
+    name: 'genReact',
+    fn() {
     const { Mustache, PluginType, paths } = api;
     const { project } = api.getConfig();
     const tpl = api.getFile(join(__dirname, 'mdf.tpl'));
@@ -54,5 +56,5 @@ export default function(api: IApi) {
     });
 
     api.writeFile(`${paths.absTmpPath}/mdf.tsx`, prettierFormat(content));
-  });
+  }});
 }

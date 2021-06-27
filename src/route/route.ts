@@ -13,18 +13,21 @@ export default function (api: IApi) {
   const dynamicRoutes = new DynamicRoute({ rootDir: routesPath });
 
   // watch 放在外面会导致执行时机过早，不必要的挂载
-  api.onCodeGenerate(function () {
-    genRoutes();
+  api.onCodeGenerate({
+    name: 'genRoutes',
+    fn() {
+      genRoutes();
 
-    watch({
-      api,
-      watchOpts: {
-        path: resolvePath(routesPath),
-        keys: ['add', 'unlink', 'addDir', 'unlinkDir'],
-        onChange: genRoutes,
-      },
-      onExit: () => chalkPrints([['unwatch:', 'yellow'], ` ${routesPath}`]),
-    });
+      watch({
+        api,
+        watchOpts: {
+          path: resolvePath(routesPath),
+          keys: ['add', 'unlink', 'addDir', 'unlinkDir'],
+          onChange: genRoutes,
+        },
+        onExit: () => chalkPrints([['unwatch:', 'yellow'], ` ${routesPath}`]),
+      });
+    },
   });
 
   function genRoutes() {

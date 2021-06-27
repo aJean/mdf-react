@@ -12,19 +12,22 @@ export default function (api: IApi) {
   const watch = api.createWatchFn();
   const modelsPath = genModelsPath(api);
 
-  api.onCodeGenerate(function () {
-    injectModels(api, modelsPath);
+  api.onCodeGenerate({
+    name: 'genRematch',
+    fn() {
+      injectModels(api, modelsPath);
 
-    watch({
-      api,
-      watchOpts: {
-        path: resolvePath(modelsPath),
-        keys: ['add', 'unlink', 'addDir', 'unlinkDir', 'change'],
-        onChange: function () {
-          injectModels(api, modelsPath);
+      watch({
+        api,
+        watchOpts: {
+          path: resolvePath(modelsPath),
+          keys: ['add', 'unlink', 'addDir', 'unlinkDir', 'change'],
+          onChange: function () {
+            injectModels(api, modelsPath);
+          },
         },
-      },
-      onExit: () => chalkPrints([['unwatch:', 'yellow'], ` fundamental ${modelsPath}`]),
-    });
+        onExit: () => chalkPrints([['unwatch:', 'yellow'], ` fundamental ${modelsPath}`]),
+      });
+    },
   });
 }
