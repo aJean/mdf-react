@@ -1274,14 +1274,14 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@mdfjs/core@^0.1.28":
-  version "0.1.28"
-  resolved "https://registry.yarnpkg.com/@mdfjs/core/-/core-0.1.28.tgz#26b49325f4ba4526bbe7a71c701deac0a63c5d52"
-  integrity sha512-VktaaL6cpyuPy1JMf1v6tMWGtRbQzGeVyWS/dVdgy9xDyqnx7KgFdPVP2JQwo3GqIeqOba94/VBRuUQtd9eZCA==
+"@mdfjs/core@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@mdfjs/core/-/core-0.2.0.tgz#30da59ab9553b49593bf0c8fbc633af06a364a0d"
+  integrity sha512-5Y8MxbKxqrQ048okzhP2/PQi/nD/VELhuU92ZldJYT0uL2AEAWbb5CsqeowybQ4n/qczm3YlWiyrufSDsgPu4A==
   dependencies:
-    "@mdfjs/records" "^0.1.28"
-    "@mdfjs/runtime" "^0.1.28"
-    "@mdfjs/utils" "^0.1.28"
+    "@mdfjs/records" "^0.2.0"
+    "@mdfjs/runtime" "^0.2.0"
+    "@mdfjs/utils" "^0.2.0"
     "@types/mkdirp" "1.0.1"
     "@types/mustache" "4.0.1"
     "@types/webpack" "4.41.25"
@@ -1293,42 +1293,43 @@
     reflect-metadata "^0.1.13"
     webpack-chain "6.5.1"
 
-"@mdfjs/records@^0.1.28":
-  version "0.1.28"
-  resolved "https://registry.yarnpkg.com/@mdfjs/records/-/records-0.1.28.tgz#a9ac7f7354774d19570ea4d2a2e5cc22461dba63"
-  integrity sha512-2HRhuAi64K6L6kXXBNpmZtF0DRcJexDnyGe9vHyv+lmWlb+LDNTxgKKxtBIGlLGs+AarKiH5ewIGQr8PlsCWjA==
+"@mdfjs/records@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@mdfjs/records/-/records-0.2.0.tgz#ed26ac494ee52c9068ee9135ccddc76f3a826cc5"
+  integrity sha512-eOBW74ulx4SWBc/LzzV762rRp3QnOqUzO/PltVf89Ra7EYq1pUNvZDweMVlkPasqxkngZ98ZVu+Aan5gmAAD5w==
 
-"@mdfjs/runtime@^0.1.28":
-  version "0.1.28"
-  resolved "https://registry.yarnpkg.com/@mdfjs/runtime/-/runtime-0.1.28.tgz#f178fd7c936fea481d512887b923229d039d2e02"
-  integrity sha512-OGQa4xpKOGgnnZTU9krddnbhTLCYzxqXmJYASlFgBO4nLqY+OIqfYMAznK+7P+sMk66uyqMWFdbQWVjNYFqEZA==
+"@mdfjs/runtime@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@mdfjs/runtime/-/runtime-0.2.0.tgz#9625a78734053cc796c45781f0e73c22ba349911"
+  integrity sha512-/Mzjcmg717YOtbFaPOJgg3Ob2TsbY1TuwgKp7nA2Lqg+N2QojFahW87gdKK2Gbz7umT36z1+uiqgXsyCZcN1Nw==
   dependencies:
-    "@mdfjs/records" "^0.1.28"
+    "@mdfjs/records" "^0.2.0"
 
-"@mdfjs/types@^0.1.28":
-  version "0.1.28"
-  resolved "https://registry.yarnpkg.com/@mdfjs/types/-/types-0.1.28.tgz#10a871db4433b7ddeec03ebf7365984af04cd288"
-  integrity sha512-l1sO5xguARGzC4zNceeGXl9tllpQyMgGKRSbtMToTQTnwFYL0SDW0q4A6wO0Ey4TpB5+4BJ4VPfPflt0k4xoZA==
+"@mdfjs/types@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@mdfjs/types/-/types-0.2.0.tgz#295da82f4a135be089d044fcd98066b54a5d381a"
+  integrity sha512-aErkklcVoIE+H9ypVxOK5n4miq7YcPsylATvAwWxreB/iGFb6ghfDwvRJPyfHquhasJrm4CSaz30JzJPnXIpEg==
   dependencies:
-    "@mdfjs/core" "^0.1.28"
-    "@mdfjs/records" "^0.1.28"
+    "@mdfjs/core" "^0.2.0"
+    "@mdfjs/records" "^0.2.0"
 
-"@mdfjs/utils@^0.1.28":
-  version "0.1.28"
-  resolved "https://registry.yarnpkg.com/@mdfjs/utils/-/utils-0.1.28.tgz#5c6a6d9128bd875b75450e5cabc2b53f1a080dac"
-  integrity sha512-juxVhnh+s2mgbFrb3Zf9b6HiraZlazm702w34i9qPYw4sQTGehjXhA6VTxB/tqh94ARBKmWPYx0Eox7Nn5QJOQ==
+"@mdfjs/utils@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@mdfjs/utils/-/utils-0.2.0.tgz#d51428b3d2663d366b64d21719a3f6bee143f1a0"
+  integrity sha512-GHKp9rS2cmdKrKgosYfbLlEOR2rzeK470kPr+Oep2bu1vg/pToGkz6+3wfMcaZ60rqJKENtaUIw3BXBhw+iP2w==
   dependencies:
     "@babel/core" "7.12.3"
     "@babel/preset-env" "7.12.1"
     "@babel/preset-typescript" "7.12.1"
     "@babel/register" "7.12.1"
-    "@mdfjs/records" "^0.1.28"
+    "@mdfjs/records" "^0.2.0"
     babel-plugin-module-resolver "4.0.0"
     chalk "4.1.0"
     chokidar "3.4.3"
     glob "7.1.6"
     ora "5.3.0"
     prettier "2.1.2"
+    rimraf "3.0.2"
 
 "@rollup/plugin-babel@5.2.1":
   version "5.2.1"
@@ -5729,6 +5730,13 @@ rimraf@2.6.3:
   version "2.6.3"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.6.3.tgz#b2d104fe0d8fb27cf9e0a1cda8262dd3833c6cab"
   integrity sha512-mwqeW5XsA2qAejG46gYdENaxXjx9onRNCfn7L0duuP4hCuTIi/QO7PDK07KJfp1d+izWPrzEJDcSqBa0OZQriA==
+  dependencies:
+    glob "^7.1.3"
+
+rimraf@3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-3.0.2.tgz#f1a5402ba6220ad52cc1282bac1ae3aa49fd061a"
+  integrity sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==
   dependencies:
     glob "^7.1.3"
 
