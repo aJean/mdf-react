@@ -9,7 +9,7 @@ import { history } from './history';
 import createMdfApp from './plugins-dva/app';
 {{/useDva}}
 {{^useDva}}
-import createMdfApp from './plugins-fundamental/app';
+import createMdfApp from './plugins-rematch/app';
 {{/useDva}}
 {{{ importsBehind }}}
 

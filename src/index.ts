@@ -22,8 +22,8 @@ export default function (api: IApi) {
     case 'dva':
       presets.push(require.resolve('./dva/dva'));
       break;
-    case 'fundamental':
-      presets.push(require.resolve('./fundamental/fundamental'));
+    case 'rematch':
+      presets.push(require.resolve('./rematch/rematch'));
       break;
   }
 

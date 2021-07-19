@@ -62,7 +62,7 @@ export interface ImmerModel<S = any> {
   }
 }
 
-export interface ConnectProps<P extends { [K in keyof P]?: string } = {}, S = LocationState> {
+export interface ConnectedProps<P extends { [K in keyof P]?: string } = {}, S = LocationState> {
   dispatch?: Dispatch;
   match?: match<P>;
   location: Location<S>;
