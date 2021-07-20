@@ -57,8 +57,8 @@ export function inject(opts: InjectOpts) {
     initModels,
     rematchPath,
     persistPath: project.persist,
-    loadingPath: true,
-    immerPath: true,
+    loadingPath: require.resolve('@rematch/loading'),
+    immerPath: require.resolve('@rematch/immer'),
   });
   api.writeFile(`${paths.absTmpPath}/plugins-rematch/app.ts`, prettierFormat(content));
 

@@ -1336,6 +1336,16 @@
   resolved "https://registry.yarnpkg.com/@rematch/core/-/core-2.0.1.tgz#c69bba9637f41c403c8725834673b12a58a28f31"
   integrity sha512-EyvgmXzXZnDCIIsmBmOtwzaTQzH+rAlrjcPTiV8Hd/TbFeH5VpCXI/B4myB5aH4P+yQafRkm846HNHMmhkq7kQ==
 
+"@rematch/immer@2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@rematch/immer/-/immer-2.0.1.tgz#07f9fee143feea36f8172d7093fe53fe1a254d67"
+  integrity sha512-5Lt2YhCoKPpXb//CqoNh/7kaWENKKhkm015iWcW6I+2wFUUDoiUV8Rm+CzfTxEj+5/V4Uf/eJFPR0nmxaLnbHw==
+
+"@rematch/loading@2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@rematch/loading/-/loading-2.0.1.tgz#0e14ccda22097483cdc62cb6f9af2de5d96b5cd2"
+  integrity sha512-UybllPKoEAuSnbfbz8ntXX1VOtUH5BUaRYINfGNHFkhLnjHRS1C2Zz+9W2yvmmY6M5WCJkuH4fIFurDms3rHIQ==
+
 "@rollup/plugin-babel@5.2.1":
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-babel/-/plugin-babel-5.2.1.tgz#20fc8f8864dc0eaa1c5578408459606808f72924"

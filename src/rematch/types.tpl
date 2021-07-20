@@ -1,5 +1,5 @@
 import { match, Location, LocationState, History } from 'mdf';
-import { Models, RematchDispatch, RematchRootState } from '{{{ rematchPath }}}';
+import { createModel as createRematchModel, Models, RematchDispatch, RematchRootState } from '{{{ rematchPath }}}';
 {{#models}}
 import {{{ name }}} from '{{{ importPath }}}';
 {{/models}}
@@ -26,4 +26,6 @@ declare module 'mdf' {
   type Dispatch = RematchDispatch<RootModel>;
 
   type RootState = RematchRootState<RootModel>;
+
+  const createModel = createRematchModel<RootModel>();
 }

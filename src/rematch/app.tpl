@@ -1,6 +1,8 @@
 import React from 'react';
 import { init } from '{{{ rematchPath }}}';
-import { plugin, PluginType, Provider } from 'mdf';
+import loading, { ExtraModelsFromLoading } from '{{{ loadingPath }}}';
+import immerPlugin from '{{{ immerPath }}}';
+import { plugin, PluginType, Provider, RootModel } from 'mdf';
 {{#models}}
 import {{{ name }}} from '{{{ importPath }}}';
 {{/models}}
@@ -8,6 +10,8 @@ import {{{ name }}} from '{{{ importPath }}}';
 /**
  * @file 集成业务框架 - rematch
  */
+
+type FullModel = ExtraModelsFromLoading<RootModel>;
 
 export default function (opts: any) {
   const config = plugin.invoke({
@@ -26,16 +30,22 @@ export default function (opts: any) {
     },
 
     router(router: any) {
-      this.$router = router;
+      this['$router'] = router;
     },
 
     create() {
       return React.createElement(
         Provider,
         {
-          store: init({ models: {{{ initModels }}} }),
+          store: init<RootModel, FullModel>({ 
+            models: {{{ initModels }}},
+            plugins: [
+              loading(),
+              immerPlugin(),
+            ]
+          }),
         },
-        this.$router(),
+        this['$router'](),
       );
     },
   };

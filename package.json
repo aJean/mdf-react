@@ -26,6 +26,8 @@
     "@mdfjs/types": "^0.2.3",
     "@mdfjs/utils": "^0.2.3",
     "@rematch/core": "2.0.1",
+    "@rematch/immer": "2.0.1",
+    "@rematch/loading": "2.0.1",
     "babel-loader": "8.2.2",
     "dva": "2.6.0-beta.20",
     "dva-immer": "0.5.2",
