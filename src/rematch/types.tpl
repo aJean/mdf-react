@@ -16,8 +16,8 @@ declare module 'mdf' {
   }
 
   interface ConnectedProps<P extends { [K in keyof P]?: string } = {}, S = LocationState> {
-    dispatch?: RematchDispatch<RootModel>;
-    match?: match<P>;
+    dispatch: RematchDispatch<RootModel>;
+    match: match<P>;
     location: Location<S>;
     history: History;
     route: any;

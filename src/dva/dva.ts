@@ -1,7 +1,7 @@
 import { IApi } from '@mdfjs/types';
 import { join, dirname, resolve as resolvePath } from 'path';
 import { prettierFormat, chalkPrints, genModelsPath } from '@mdfjs/utils';
-import injectModels from './inject';
+import { InjectOpts, inject } from './inject';
 
 /**
  * @file 集成业务框架 - dva
@@ -9,15 +9,16 @@ import injectModels from './inject';
 
 export default function (api: IApi) {
   const watch = api.createWatchFn();
+  const modelPath = genModelsPath(api);
   const dvaPath = dirname(require.resolve('dva/package.json'));
-  const modelsPath = genModelsPath(api);
 
   api.onCodeGenerate({
     name: 'genDva',
     fn() {
       const { paths, Mustache } = api;
+      const injectOpts: InjectOpts = { api, dvaPath, modelPath };
 
-      injectModels(api, dvaPath, modelsPath);
+      inject(injectOpts);
 
       const exportTpl = api.getFile(join(__dirname, './exports.tpl'));
       const exportContent = Mustache.render(exportTpl, { dvaPath });
@@ -26,13 +27,13 @@ export default function (api: IApi) {
       watch({
         api,
         watchOpts: {
-          path: resolvePath(modelsPath),
+          path: resolvePath(modelPath),
           keys: ['add', 'unlink', 'addDir', 'unlinkDir', 'change'],
           onChange: function () {
-            injectModels(api, dvaPath, modelsPath);
+            inject(injectOpts);
           },
         },
-        onExit: () => chalkPrints([['unwatch:', 'yellow'], ` dva ${modelsPath}`]),
+        onExit: () => chalkPrints([['unwatch:', 'yellow'], ` dva ${modelPath}`]),
       });
     },
   });

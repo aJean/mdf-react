@@ -2,4 +2,9 @@ import { IApi } from '@mdfjs/types';
 /**
  * @file 自动注入 model 插件
  */
-export default function (api: IApi, rematchPath: string, modelsPath: string): void;
+export declare type InjectOpts = {
+    api: IApi;
+    rematchPath: string;
+    modelPath: string;
+};
+export declare function inject(opts: InjectOpts): void;

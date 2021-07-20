@@ -1,9 +1,9 @@
 import React from 'react';
 import dva, { DvaOption } from '{{{ dvaPath }}}';
 // @ts-ignore
-import createLoading from '{{{ dvaLoadingPath }}}';
+import createLoading from '{{{ loadingPath }}}';
 // @ts-ignore
-import createImmer from '{{{ dvaImmerPath }}}';
+import createImmer from '{{{ immerPath }}}';
 {{#persistPath}}
 // @ts-ignore
 import { persistStore, persistReducer } from '{{{ persistPath }}}';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { init } from '{{{ rematchPath }}}';
-import { plugin, PluginType } from 'mdf';
+import { plugin, PluginType, Provider } from 'mdf';
 {{#models}}
 import {{{ name }}} from '{{{ importPath }}}';
 {{/models}}
@@ -8,8 +8,6 @@ import {{{ name }}} from '{{{ importPath }}}';
 /**
  * @file 集成业务框架 - rematch
  */
-
-const { Provider } = require('{{{ reduxPath }}}');
 
 export default function (opts: any) {
   const config = plugin.invoke({

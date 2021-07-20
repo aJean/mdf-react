@@ -1,18 +1,24 @@
 import { IApi } from '@mdfjs/types';
-import { resolve as resolvePath, join, dirname, basename, extname } from 'path';
-import { globFind, chalkPrints, prettierFormat } from '@mdfjs/utils';
-import { checkModel } from '../fundamental/parse';
+import { resolve as resolvePath, join, basename, extname } from 'path';
+import { chalkPrints, prettierFormat } from '@mdfjs/utils';
+import { checkModel } from '../compiler/parse';
+import { findFiles } from '../utils';
 
 /**
  * @file 自动注入 model 插件
  */
 
-export default function (api: IApi, rematchPath: string, modelsPath: string) {
+export type InjectOpts = {
+  api: IApi;
+  rematchPath: string;
+  modelPath: string;
+};
+
+export function inject(opts: InjectOpts) {
+  const { api, rematchPath, modelPath } = opts;
   const { paths, Mustache } = api;
   const { isDev, project } = api.getConfig();
-  const matches = globFind(`${modelsPath}/**/*.{ts,js,tsx,jsx}`).filter(
-    (path) => !/dva_/.test(path),
-  );
+  const matches = findFiles(modelPath, 'dva_');
   const models = matches
     .map((file: string) => {
       const error = checkModel(file, api);
@@ -50,7 +56,9 @@ export default function (api: IApi, rematchPath: string, modelsPath: string) {
     models,
     initModels,
     rematchPath,
-    reduxPath: dirname(require.resolve('react-redux/package.json')),
+    persistPath: project.persist,
+    loadingPath: true,
+    immerPath: true,
   });
   api.writeFile(`${paths.absTmpPath}/plugins-rematch/app.ts`, prettierFormat(content));
 

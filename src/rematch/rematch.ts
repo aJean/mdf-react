@@ -1,7 +1,7 @@
 import { IApi } from '@mdfjs/types';
-import { join, dirname, resolve as resolvePath } from 'path';
-import { prettierFormat, chalkPrints, genModelsPath } from '@mdfjs/utils';
-import injectModels from './inject';
+import { dirname, resolve as resolvePath } from 'path';
+import { chalkPrints, genModelsPath } from '@mdfjs/utils';
+import { InjectOpts, inject } from './inject';
 
 /**
  * @file 集成业务框架 - rematch
@@ -9,34 +9,25 @@ import injectModels from './inject';
 
 export default function (api: IApi) {
   const watch = api.createWatchFn();
+  const modelPath = genModelsPath(api);
   const rematchPath = dirname(require.resolve('@rematch/core/package.json'));
-  const reduxPath = require.resolve('react-redux');
-  const modelsPath = genModelsPath(api);
 
   api.onCodeGenerate({
     name: 'genRematch',
     fn() {
-      const { paths, Mustache } = api;
-
-      injectModels(api, rematchPath, modelsPath);
-
-      const exportTpl = api.getFile(join(__dirname, './exports.tpl'));
-      const exportContent = Mustache.render(exportTpl, { rematchPath, reduxPath });
-      // api.writeFile(
-      //   `${paths.absTmpPath}/plugins-rematch/exports.ts`,
-      //   prettierFormat(exportContent),
-      // );
+      const injectOpts: InjectOpts = { api, rematchPath, modelPath };
+      inject(injectOpts);
 
       watch({
         api,
         watchOpts: {
-          path: resolvePath(modelsPath),
+          path: resolvePath(modelPath),
           keys: ['add', 'unlink', 'addDir', 'unlinkDir', 'change'],
           onChange: function () {
-            injectModels(api, rematchPath, modelsPath);
+            inject(injectOpts);
           },
         },
-        onExit: () => chalkPrints([['unwatch:', 'yellow'], ` dva ${modelsPath}`]),
+        onExit: () => chalkPrints([['unwatch:', 'yellow'], ` dva ${modelPath}`]),
       });
     },
   });

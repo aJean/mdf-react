@@ -1,18 +1,24 @@
 import { IApi } from '@mdfjs/types';
 import { resolve as resolvePath, join, dirname, basename, extname } from 'path';
-import { globFind, chalkPrints, prettierFormat } from '@mdfjs/utils';
-import { checkModel } from '../fundamental/parse';
+import { chalkPrints, prettierFormat } from '@mdfjs/utils';
+import { checkModel } from '../compiler/parse';
+import { findFiles } from '../utils';
 
 /**
  * @file 自动注入 model 插件
  */
 
-export default function (api: IApi, dvaPath: string, modelsPath: string) {
+export type InjectOpts = {
+  api: IApi;
+  dvaPath: string;
+  modelPath: string;
+};
+
+export function inject(opts: InjectOpts) {
+  const { api, dvaPath, modelPath } = opts;
   const { paths, Mustache } = api;
   const { isDev, project } = api.getConfig();
-  const matches = globFind(`${modelsPath}/*.{ts,js,tsx,jsx}`).filter(
-    (path) => !/rematch_/.test(path),
-  );
+  const matches = findFiles(modelPath, 'rematch_');
   const models = matches
     .map((file: string) => {
       const error = checkModel(file, api);
@@ -58,8 +64,8 @@ export default function (api: IApi, dvaPath: string, modelsPath: string) {
     RegisterModels,
     dvaPath,
     persistPath: project.persist && dirname(require.resolve('redux-persist')),
-    dvaLoadingPath: require.resolve('dva-loading/dist/index.js'),
-    dvaImmerPath: require.resolve('dva-immer/dist/index.js'),
+    loadingPath: require.resolve('dva-loading/dist/index.js'),
+    immerPath: require.resolve('dva-immer/dist/index.js'),
   });
   api.writeFile(`${paths.absTmpPath}/plugins-dva/app.ts`, prettierFormat(content));
 

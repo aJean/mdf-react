@@ -1,7 +1,7 @@
 import { IApi } from '@mdfjs/types';
 import { resolve as resolvePath, join, basename, extname } from 'path';
 import { globFind, chalkPrints, prettierFormat } from '@mdfjs/utils';
-import { checkModel } from './parse';
+import { checkModel } from '../compiler/parse';
 
 /**
  * @file 目前约定 model 只放在 src/models 里面，文件名作为 namespace

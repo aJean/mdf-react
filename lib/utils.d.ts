@@ -1,4 +1,4 @@
 /**
  * @file utils
  */
-export declare function todo(): void;
+export declare function findFiles(path: string, excludes?: string | string[]): string[];
