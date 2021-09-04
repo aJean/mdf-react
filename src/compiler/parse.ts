@@ -64,7 +64,7 @@ function isValid(node: any, path: string) {
         hasState = true;
       }
     });
-  } catch (e) {
+  } catch (e: any) {
     error.msg = e.message;
     return error;
   }

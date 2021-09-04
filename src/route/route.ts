@@ -50,8 +50,8 @@ export default function (api: IApi) {
       );
 
       api.writeFile(`${paths.absTmpPath}/routes.tsx`, prettierFormat(result));
-    } catch (err) {
-      api.chalkPrint(err.stack, 'red');
+    } catch (e: any) {
+      api.chalkPrint(e.stack, 'red');
     }
   }
 }

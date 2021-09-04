@@ -23,7 +23,7 @@ export {
 
 export {
   Location,
-  LocationState,
+  State,
   History,
   createBrowserHistory,
   createHashHistory,
