@@ -42,13 +42,8 @@ export default function (api: IApi) {
  * es-lint config
  */
 export function lint(opts: any) {
-  Object.assign(opts.settings, {
-    react: {
-      version: 'detect',
-    },
-  });
-
   opts.plugins.push('react', 'react-hooks');
+  Object.assign(opts.settings, { react: { version: 'detect' } });
 
   Object.assign(opts.rules, {
     'no-restricted-properties': [
@@ -84,9 +79,7 @@ export function lint(opts: any) {
     'react/jsx-uses-react': 'warn',
     'react/jsx-uses-vars': 'warn',
     'react/no-danger-with-children': 'warn',
-    // Disabled because of undesirable warnings
-    // See https://github.com/facebook/create-react-app/issues/5204 for
-    // blockers until its re-enabled
+    // Disabled because of undesirable warnings See https://github.com/facebook/create-react-app/issues/5204 for blockers until its re-enabled
     // 'react/no-deprecated': 'warn',
     'react/no-direct-mutation-state': 'warn',
     'react/no-is-mounted': 'warn',

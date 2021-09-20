@@ -13,7 +13,6 @@ export default function (api: IApi) {
 
     // 内置 react
     chain.resolve.alias.merge({
-      'react-native': 'react-native-web',
       // 使用内置的 react 版本
       'react-dom': require.resolve('react-dom'),
       react: require.resolve('react'),

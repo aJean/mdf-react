@@ -44,6 +44,11 @@ export default function getBabelOpts(opts: any) {
   ]);
 
   plugins.push([require.resolve('@babel/plugin-proposal-decorators'), { legacy: true }]);
+  plugins.push([require.resolve('@babel/plugin-proposal-private-methods'), { loose: true }]);
+  plugins.push([
+    require.resolve('@babel/plugin-proposal-private-property-in-object'),
+    { loose: true },
+  ]);
   plugins.push([require.resolve('@babel/plugin-proposal-class-properties'), { loose: true }]);
 
   // 按需加载配置，例如 antd
@@ -53,7 +58,6 @@ export default function getBabelOpts(opts: any) {
     });
   }
 
-  // babel-plugin-transform-react-remove-prop-types
   // 这一类语法增强插件是否有必要
   // @babel/plugin-proposal-export-default-from
   // @babel/plugin-proposal-pipeline-operator

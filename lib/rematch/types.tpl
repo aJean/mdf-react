@@ -1,3 +1,4 @@
+import React from 'react';
 import { match, Location, LocationState, History } from 'mdf';
 import { createModel as createRematchModel, Models, RematchDispatch, RematchRootState } from '{{{ rematchPath }}}';
 {{#models}}
@@ -22,6 +23,8 @@ declare module 'mdf' {
     history: History;
     route: any;
   }
+
+  type ConnectedReturn<TProps> = (props: TProps) => React.ReactElement;
 
   type Dispatch = RematchDispatch<RootModel>;
 
