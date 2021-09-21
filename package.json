@@ -1,6 +1,6 @@
 {
   "name": "@mdfjs/react",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "separate plugins-react from mdfjs",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
